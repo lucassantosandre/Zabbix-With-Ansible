@@ -1,0 +1,29 @@
+- hosts: monitoramento-zabbix-server
+  become: yes
+  user: root
+  roles:
+    - { role: monitoramento-zabbix-server, tags: ["monitoramento_zabbix_server_role"] }
+
+- hosts: monitoramento-psql-13
+  become: yes
+  user: root
+  roles:
+    - { role: monitoramento-psql-13, tags: ["monitoramento_psql_13_role"] }
+
+- hosts: monitoramento-timescaledb
+  become: yes
+  user: root
+  roles:
+    - { role: monitoramento-timescaledb, tags: ["monitoramento_timescaledb_role"] }
+
+- hosts: monitoramento-nginx
+  become: yes
+  user: root
+  roles:
+    - { role: monitoramento-nginx, tags: ["monitoramento_nginx_role"] }
+
+- hosts: monitoramento-php
+  become: yes
+  user: root
+  roles:
+    - { role: monitoramento_php, tags: ["monitoramento_php_role"] }

@@ -1,0 +1,16 @@
+  - name: Adicionando repositório Zabbix
+    package_repository:
+      name: Zabbix
+      repo: "https://repo.zabbix.com/zabbix/{{ zabbix_version }}/rocky/x86_64"
+  - name: Instalando pacotes Zabbix Server
+    package:
+      name: 'zabbix-server-pgsql'
+      state: present
+  - name: Configurando arquivo de configuração do Zabbix Server
+    template:
+      src: zabbix_server.conf.j2
+      dest: /etc/zabbix/zabbix_server.conf
+  - name: Iniciando o serviço Zabbix Server
+    service:
+      name: zabbix-server
+      state: started

@@ -1,0 +1,14 @@
+[monitoramento-zabbix-server]
+localhost
+
+[monitoramento-psql-13]
+localhost
+
+[monitoramento-timescaledb]
+localhost
+
+[monitoramento-nginx]
+localhost
+
+[monitoramento-php]
+localhost
